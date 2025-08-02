@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  puabo-os:
+    build: .
+    container_name: puabo-os-app
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    restart: unless-stopped
+    networks:
+      - puabo-network
+
+  redis:
+    image: redis:alpine
+    container_name: puabo-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - puabo-network
+
+networks:
+  puabo-network:
+    driver: bridge
+
+volumes:
+  redis_data:
