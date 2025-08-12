@@ -1,0 +1,190 @@
+/* CSS Compatibility Layer - Vendor Prefixes for Experimental Properties */
+
+/* Additional compatibility for experimental CSS properties */
+
+/* text-size-adjust - Additional browser support */
+html, body {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* user-select - Additional browser support */
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* appearance - Additional browser support */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* mask-image support */
+.mask-image {
+  -webkit-mask-image: var(--mask-image);
+  mask-image: var(--mask-image);
+}
+
+/* backdrop-filter additional support */
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(var(--blur-amount, 4px));
+  backdrop-filter: blur(var(--blur-amount, 4px));
+  /* Fallback for unsupported browsers */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  /* Fallback for unsupported browsers */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.backdrop-blur-md {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  /* Fallback for unsupported browsers */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* clip-path support */
+.clip-path {
+  -webkit-clip-path: var(--clip-path);
+  clip-path: var(--clip-path);
+}
+
+/* transform additional support */
+.transform {
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -moz-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* transition additional support */
+.transition {
+  -webkit-transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  -moz-transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  -ms-transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+}
+
+/* filter additional support */
+.filter {
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+/* box-decoration-break support */
+.box-decoration-break {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* scroll-snap support */
+.scroll-snap-type {
+  -webkit-scroll-snap-type: var(--scroll-snap-type);
+  -ms-scroll-snap-type: var(--scroll-snap-type);
+  scroll-snap-type: var(--scroll-snap-type);
+}
+
+.scroll-snap-align {
+  -webkit-scroll-snap-align: var(--scroll-snap-align);
+  scroll-snap-align: var(--scroll-snap-align);
+}
+
+/* overscroll-behavior support */
+.overscroll-behavior {
+  -ms-scroll-chaining: var(--overscroll-behavior);
+  overscroll-behavior: var(--overscroll-behavior);
+}
+
+/* CSS Grid additional support for older browsers */
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+/* Flexbox additional support for older browsers */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.items-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* animation support */
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  -webkit-animation: fade-in 0.3s ease-out;
+  animation: fade-in 0.3s ease-out;
+}
+
+/* CSS Variables fallbacks for older browsers */
+@supports not (color: var(--primary)) {
+  :root {
+    /* Fallback colors for browsers that don't support CSS variables */
+    --primary-fallback: #3b82f6;
+    --background-fallback: #ffffff;
+    --foreground-fallback: #000000;
+  }
+  
+  .bg-primary {
+    background-color: #3b82f6;
+  }
+  
+  .text-primary {
+    color: #3b82f6;
+  }
+  
+  .bg-background {
+    background-color: #ffffff;
+  }
+  
+  .text-foreground {
+    color: #000000;
+  }
+}
