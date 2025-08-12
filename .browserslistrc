@@ -1,0 +1,25 @@
+# Browsers that we support
+# For maximum compatibility including older browsers that need vendor prefixes
+
+# Modern browsers
+> 0.5%
+last 2 versions
+not dead
+
+# Additional older browser support for CSS compatibility
+# This will ensure autoprefixer adds more vendor prefixes
+Chrome >= 60
+Safari >= 10
+Firefox >= 55
+Edge >= 16
+iOS >= 10
+Android >= 7
+
+# Support for browsers that need -ms- prefixes  
+ie >= 11
+
+# Support for browsers that need -webkit- prefixes for experimental properties
+Safari >= 9
+iOS >= 9
+Chrome >= 50
+Android >= 6
